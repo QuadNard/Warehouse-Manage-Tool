@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import {GiCardboardBoxClosed} from 'react-icons/gi'
 import Table from '../components/table'
-
+import Form from '../components/form'
 
 export default function Home() {
   return (
@@ -21,6 +21,10 @@ export default function Home() {
               Add New Product  <span className='px-1'><GiCardboardBoxClosed size={23}></GiCardboardBoxClosed></span>
             </button>
           </div>
+     </div>
+
+     <div className="container mx-auto py-5">
+       <Form></Form>
      </div>
 
 
