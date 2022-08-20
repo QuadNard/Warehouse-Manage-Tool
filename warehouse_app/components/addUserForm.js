@@ -1,26 +1,40 @@
-import { useReducer } from "react"
 import Success from '../components/success'
 import Bug from '../components/bug'
+import { useQueryClient, useMutation, QueryClient} from "react-query"
+import { addUser, getUsers  } from '../lib/helper'
 
-const formReducer = (state, event) => {
-return {
-    ...state,
-    [event.target.name]: event.target.value
-}
-}
 
-export default function AddUserForm(){
 
-      const [formData, setFormData] =useReducer(formReducer, {})
 
+export default function AddUserForm({ formData, setFormData}){
+
+        const queryClient =useQueryClient()
+        const addMutation = useMutation(addUser, {
+            onSuccess : () =>{
+             queryClient.prefetchQuery('users', getUsers)
+        }
+      })
 
       const handleSubmit = (e) => {
         e.preventDefault(); 
         if(Object.keys(formData).length == 0) return console.log("Don't have form data")
-        console.log(formData)
+        let { id, ID, Name, Weight, Stock, Status} = formData;
+
+        const model = {
+            id,
+            ID,
+            Name, 
+            Weight,
+            Stock,
+            Status : Status ?? "Active Unloading"
+        }
+
+       addMutation.mutate(model)
       }
     
-     if(Object.keys(formData).length>0) return<Success message={"Data Added To Inventory"}></Success>
+      if(addMutation.isLoading)return<div>Loading!</div>
+      if(addMutation.isError)return<Bug message={addMutation.error.message}></Bug>
+      if(addMutation.isSuccess)return <Success message={"Added Successfully"}></Success>
 
 
     return(
