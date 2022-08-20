@@ -1,9 +1,16 @@
 import { BiEdit, BiTrashAlt } from "react-icons/bi"
 import data from '../database/data.json'
-
+import { getUser } from "../lib/helper"
+import { useQuery } from 'react-query'
 
 
 export default function Table(){
+
+  const { isLoading, isError, data, error } = useQuery('users', getUser)
+
+   if(isLoading)return <div>Inventory is Loading...</div>;
+   if(isError)return<div>Got Error {error}</div>
+
     return(
         <table className="min-w-full table-auto">
           <thead>
@@ -58,7 +65,7 @@ function Tr({id, ID, Name, Weight, Status,Stock }){
               </td>
 
               <td className="px-16 py-2 ">
-              <button className="cursor"><span className="bg-green-500 text-white px-5 py-1 rounded-full">{Status || "Unknown"}</span></button>                   
+              <button className="cursor"><span className={`${status == "Active Unloading" ? 'bg-green-500' : 'bg-rose-500'} text-white px-5 py-1 rounded-full`}>{Status || "Unknown"}</span></button>                   
               </td>
                 <td className="px-16 py-2 flex justify-around gap-5">
                   <button className="cursor"><BiEdit size={25} color={"rgb(34,197,94)"} ></BiEdit></button>
