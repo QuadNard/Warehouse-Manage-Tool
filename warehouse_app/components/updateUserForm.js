@@ -39,7 +39,7 @@ export default function UpdateUserForm(){
             </div>
 
             <div className="input-type">
-            <input type="text" onChange={setFormData} name="case stock" className="border w-full px-5 py-3 focus:outline-none rounded-md" placeholder="Case Stock" />
+            <input type="text" onChange={setFormData} name="case stock" className="border w-full px-5 py-3 focus:outline-none rounded-md" placeholder="Stock" />
             </div>
              
 

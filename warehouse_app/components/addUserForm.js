@@ -13,6 +13,7 @@ export default function AddUserForm(){
 
       const [formData, setFormData] =useReducer(formReducer, {})
 
+
       const handleSubmit = (e) => {
         e.preventDefault(); 
         if(Object.keys(formData).length == 0) return console.log("Don't have form data")
@@ -20,8 +21,6 @@ export default function AddUserForm(){
       }
     
      if(Object.keys(formData).length>0) return<Success message={"Data Added To Inventory"}></Success>
-
-
 
 
     return(
@@ -39,7 +38,7 @@ export default function AddUserForm(){
             </div>
 
             <div className="input-type">
-            <input type="text" onChange={setFormData} name="case stock" className="border w-full px-5 py-3 focus:outline-none rounded-md" placeholder="Case Stock" />
+            <input type="text" onChange={setFormData} name="case stock" className="border w-full px-5 py-3 focus:outline-none rounded-md" placeholder="Stock" />
             </div>
              
 

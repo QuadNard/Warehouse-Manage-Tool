@@ -1,0 +1,59 @@
+[
+    {
+        "id": 1,
+        "ID": "230789",
+        "Name": "Software Equipment" ,
+        "Weight": "23 Ib-21.99 Ib",
+        "Stock": "67",
+        "Status":"Active Unloading"
+},
+{
+        "id": 2,
+        "ID": 232782,
+        "Name": "GPU Cargo ",
+        "Weight": "12 Ib -7.99 Ib",
+        "Stock": 345,
+        "Status": "Active Unloading"
+
+},
+{
+            "id": 3,
+        "ID": 300568,
+        "Name": "Utilities Cargo",
+        "Weight":  "2,000 Ib -67.89 Ib",
+        "Stock": "657",
+        "Status": "Halted load"
+},
+{
+        "id": 4,
+        "ID": 645647,
+        "Name": "Industrial fleet part" ,
+        "Weight": "3,450 Ib -80.99 Ib",
+        "Stock": "78",
+        "Status":"Halted load"
+},
+{
+        "id": 5,
+        "ID": 430467,
+        "Name": "Hardware Cable Cargo" ,
+        "Weight":"189 Ib -100.99 Ib",
+        "Stock": "12",
+        "Status": "Active Unloading"
+},
+{
+        "id": 6,
+        "ID": 730789,
+        "Name":"Buyer Protected-Unknown" ,
+        "Weight":"1,300 Ib -69.00 Ib",
+        "Stock": "500",
+        "Status": "Halted load"
+},
+{
+        "id": 7,
+        "ID": 230453,
+        "Name": "Metal parts ",
+        "Weight":"9,000 Ib -1.99 Ib",
+        "Stock": "980",
+        "Status": "Active Unloading"
+}
+]
